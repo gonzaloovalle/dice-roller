@@ -24,6 +24,23 @@ class MainActivity : AppCompatActivity() {
         val dice = Dice(6)
         val diceRoll = dice.roll()
 
+        //Create lucky number and conditional for when lucky number is rolled
+        val luckyNumber = 4
+        val resultTextView2: TextView = findViewById(R.id.textView2)
+        if (diceRoll == luckyNumber) {
+            resultTextView2.text = ("You win!")
+        } else if (diceRoll == 1) {
+            resultTextView2.text = ("Sorry, roll again")
+        } else if (diceRoll == 2) {
+            resultTextView2.text = ("You lost, roll again")
+        } else if (diceRoll == 3) {
+            resultTextView2.text = ("Close, but no, roll again")
+        } else if (diceRoll == 5) {
+            resultTextView2.text = ("Maybe next time, roll again")
+        } else {
+            resultTextView2.text = ("Better luck next time, roll again")
+        }
+
         // Update the screen with the dice roll
         val resultTextView: TextView = findViewById(R.id.textView)
         resultTextView.text = diceRoll.toString()
